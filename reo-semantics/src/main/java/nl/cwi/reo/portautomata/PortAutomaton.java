@@ -9,6 +9,7 @@ import java.util.SortedSet;
 import nl.cwi.reo.automata.Automaton;
 import nl.cwi.reo.automata.State;
 import nl.cwi.reo.automata.Transition;
+import nl.cwi.reo.semantics.api.Expression;
 import nl.cwi.reo.semantics.api.Port;
 import nl.cwi.reo.semantics.api.Semantics;
 import nl.cwi.reo.semantics.api.SemanticsType;
@@ -46,7 +47,7 @@ public class PortAutomaton extends Automaton<NullLabel> implements Semantics<Por
 	}
 
 	@Override
-	public PortAutomaton evaluate(Map<String, String> params) {
+	public PortAutomaton evaluate(Map<String, Expression> params) {
 		return new PortAutomaton(super.evaluate(params));
 	}
 

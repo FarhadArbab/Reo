@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import nl.cwi.reo.semantics.api.Evaluable;
 import nl.cwi.reo.semantics.api.Port;
 
 /**
@@ -13,7 +14,7 @@ import nl.cwi.reo.semantics.api.Port;
  * We use null as the silent label.
  * @param <L> label type.
  */
-public interface Label<L> {
+public interface Label<L> extends Evaluable<L> {
 	
 	/**
 	 * Constructs the composition of a list of labels. 
@@ -46,12 +47,5 @@ public interface Label<L> {
 	 * @param N		synchronization constraint
 	 * @return default label of N.
 	 */
-	public  L getLabel(Set<Port> N);
-	
-	/**
-	 * Evaluates this label using specified parameters.
-	 * @param params	parameters
-	 * @return Evaluated label.
-	 */
-	public L evaluate(Map<String, String> params);
+	public L getDefault(Set<Port> N);
 }

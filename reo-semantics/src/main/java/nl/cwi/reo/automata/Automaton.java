@@ -14,6 +14,7 @@ import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
+import nl.cwi.reo.semantics.api.Expression;
 import nl.cwi.reo.semantics.api.Port;
 
 import java.util.HashMap;
@@ -362,14 +363,14 @@ public class Automaton<L extends Label<L>> {
 		for (Port p : ins) {
 			SortedSet<Port> N = new TreeSet<Port>(outs);
 			N.add(p);
-			Transition<L> t = new Transition<L>(q0, q0, N, lbl.getLabel(N)); 
+			Transition<L> t = new Transition<L>(q0, q0, N, lbl.getDefault(N)); 
 			T.get(q0).add(t);
 		}
 		
 		return new Automaton<L>(Q, P, T, q0, lbl);
 	}
 
-	public Automaton<L> evaluate(Map<String, String> params) {
+	public Automaton<L> evaluate(Map<String, Expression> params) {
 		Map<State, Set<Transition<L>>> out = new HashMap<State, Set<Transition<L>>>();
 		for (Map.Entry<State, Set<Transition<L>>> entry : this.out.entrySet()) {
 			Set<Transition<L>> outq =  new HashSet<Transition<L>>();
