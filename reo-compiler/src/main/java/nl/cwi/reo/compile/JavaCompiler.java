@@ -9,9 +9,12 @@ import org.stringtemplate.v4.ST;
 import org.stringtemplate.v4.STGroup;
 import org.stringtemplate.v4.STGroupFile;
 
+import nl.cwi.reo.interpret.semantics.FlatAssembly;
+import nl.cwi.reo.portautomata.PortAutomaton;
+
 public class JavaCompiler {
 	
-	public void compile() {
+	public void compile(FlatAssembly<PortAutomaton> program) {
 		
 		STGroup group = new STGroupFile("resources/Java.stg", '$', '$');
         ST component = group.getInstanceOf("component");

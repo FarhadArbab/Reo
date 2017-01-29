@@ -9,6 +9,7 @@ import java.util.Objects;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
+import nl.cwi.reo.semantics.api.Expression;
 import nl.cwi.reo.semantics.api.Port;
 
 /**
@@ -149,7 +150,7 @@ public final class Transition<L extends Label<L>> {
 	 * @param params	parameters
 	 * @return Evaluated label.
 	 */
-	public Transition<L> evaluate(Map<String, String> params) {
+	public Transition<L> evaluate(Map<String, Expression> params) {
 		return new Transition<L>(q1, q2, N, lbl.evaluate(params));
 	}
 	

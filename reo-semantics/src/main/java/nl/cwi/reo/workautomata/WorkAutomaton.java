@@ -15,6 +15,7 @@ import java.util.SortedSet;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
+import nl.cwi.reo.semantics.api.Expression;
 import nl.cwi.reo.semantics.api.Port;
 import nl.cwi.reo.semantics.api.Semantics;
 import nl.cwi.reo.semantics.api.SemanticsType;
@@ -391,7 +392,7 @@ public final class WorkAutomaton implements Semantics<WorkAutomaton> {
 	}
 
 	@Override
-	public WorkAutomaton evaluate(Map<String, String> params) {
+	public WorkAutomaton evaluate(Map<String, Expression> params) {
 		return this;
 	}
 

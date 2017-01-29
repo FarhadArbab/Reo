@@ -78,11 +78,7 @@ public final class Component<T extends Semantics<T>> implements Block<T> {
 	  */
 	@Override
 	public Component<T> evaluate(Map<String, Expression> params) {
-		Map<String, String> p = new HashMap<String, String>();
-		for (Map.Entry<String, Expression> def : params.entrySet())
-			if (def.getValue() instanceof Object)//StringValue)
-				p.put(def.getKey(), ((Object)def.getValue()).toString());
-		return new Component<T>(semantics.evaluate(p), source);
+		return new Component<T>(semantics.evaluate(params), source);
 	}
 
 	/**

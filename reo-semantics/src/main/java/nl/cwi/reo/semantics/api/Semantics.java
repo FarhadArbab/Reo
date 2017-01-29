@@ -15,7 +15,7 @@ public interface Semantics<T> {
 	
 	public T rename(Map<Port, Port> links);
 
-	public T evaluate(Map<String, String> params);
+	public T evaluate(Map<String, Expression> params);
 	
 	public T compose(List<T> automata);
 	

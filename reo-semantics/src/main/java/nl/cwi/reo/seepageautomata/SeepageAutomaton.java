@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.SortedSet;
 
 import nl.cwi.reo.automata.Automaton;
+import nl.cwi.reo.semantics.api.Expression;
 import nl.cwi.reo.semantics.api.Port;
 import nl.cwi.reo.semantics.api.Semantics;
 import nl.cwi.reo.semantics.api.SemanticsType;
@@ -38,7 +39,7 @@ public class SeepageAutomaton extends Automaton<SeepageFunction> implements Sema
 	}
 
 	@Override
-	public SeepageAutomaton evaluate(Map<String, String> params) {
+	public SeepageAutomaton evaluate(Map<String, Expression> params) {
 		return new SeepageAutomaton(super.evaluate(params));
 	}
 
